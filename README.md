@@ -90,3 +90,21 @@ docker-compose exec backend sh
 > flask db migrate -m 'Migration message'
 
 > flask db upgrade
+
+# RabbitMQ
+
+Create free account:
+<https://www.cloudamqp.com/>
+
+# Django Producer and Consumer (admin)
+
+Go to AMQP details and copy and paste URL.
+
+(admin) docker-compose exec backend sh
+bash
+cd admin
+python consumer.py
+
+# Flask Producer and Consumer (main)
+
+...
