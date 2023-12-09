@@ -23,3 +23,9 @@ Source: <https://www.youtube.com/watch?v=0iB5IPoTDts>
     # Docker
     docker-compose up
 ```
+
+## Connect Django with MySQL with Docker
+
+```bash
+python manage.py startapp products
+```
