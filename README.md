@@ -29,3 +29,8 @@ Source: <https://www.youtube.com/watch?v=0iB5IPoTDts>
 ```bash
 python manage.py startapp products
 ```
+
+## Models & Serializers
+
+- python manage.py makemigrations
+- python manage.py migrate
