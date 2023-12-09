@@ -37,7 +37,7 @@ python manage.py startapp products
 - python manage.py makemigrations
 - python manage.py migrate
 
-## ...
+##
 
 ...
 
@@ -65,7 +65,7 @@ After modifying the requirements.txt file, rebuild your Docker image to ensure t
 
 Finally, run your Docker containers again with `docker-compose up`.
 
-Postman test: <http://localhost:8001> 
+Postman test: <http://localhost:8001>
 
 ```txt
 Hello world!
@@ -78,3 +78,15 @@ Hello world!
 ## Models
 
 ...
+
+## Flask Migrations
+
+docker-compose exec backend sh
+
+> export FLASK_APP=main
+
+> flask db init
+
+> flask db migrate -m 'Migration message'
+
+> flask db upgrade
