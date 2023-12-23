@@ -1,5 +1,5 @@
-import pika # RabbitMQ
-
+import pika, json
+from admin import Product
 params = pika.URLParameters('amqps://ykaotyzw:Jnxjf90ng-3yBPYp9uCx6N5zED0R6Ifq@seal.lmq.cloudamqp.com/ykaotyzw')
 
 connection = pika.BlockingConnection(params)
@@ -10,8 +10,13 @@ channel.queue_declare(queue='admin')
 
 def callback(ch, method, properties, body):
     print('Received in admin')
-    print(body)
+    id = json.loads(body)
+    print(id)
 
+    product = Product.query.get(id=id)
+    product.likes = product.likes + 1
+    product.save()
+    print('Product likes increased!')
 
 channel.basic_consume(queue='admin', on_message_callback=callback)
 

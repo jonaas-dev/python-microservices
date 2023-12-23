@@ -108,3 +108,7 @@ python consumer.py
 # Flask Producer and Consumer (main)
 
 ...
+
+# Data consistency
+
+
